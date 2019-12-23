@@ -13,10 +13,10 @@ namespace ExamSystemProgramming
         public MainWindow()
         {
             InitializeComponent();
-            //using (var context = new ThreeZeroDbContext())
-            //{
+            using (var context = new ThreeZeroDbContext())
+            {
 
-            //}
+            }
         }
 
         private async void ProcessButtonClick(object sender, RoutedEventArgs e)
@@ -35,7 +35,7 @@ namespace ExamSystemProgramming
 
             string saveRes = result.ToString();
 
-          //  SaveToBd(saveRes);
+            SaveToBd(saveRes);
             await SaveToFile(saveRes, "infosData.json");
             mainProgressBar.IsIndeterminate = false;
             ProcessButton.IsEnabled = true;
